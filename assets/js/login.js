@@ -30,7 +30,8 @@ document.getElementById("btn-login").addEventListener("click", function () {
 // Login Function
 function login(email, pass) {
     if (email === loginInfo.email && pass === loginInfo.password) {
-        // alert("Ok")
+        // Login success: redirect
+        location.href = "bank.html";
     } else {
         alert("Error: Wrong Email or Password!");
     }
