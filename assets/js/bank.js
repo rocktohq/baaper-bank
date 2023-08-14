@@ -3,7 +3,7 @@
 */
 
 
-// Globals
+// Global Variables
 // Get total balance
 var totalBalance = document.getElementById("total-balance");
 // Get the diposit balance
@@ -12,11 +12,10 @@ var dipositBalance = document.getElementById("diposit-balance");
 var withdrawBalance = document.getElementById("withdraw-balance");
 
 
-
-
 // If deposit button is clicked
 document.getElementById("btn-diposit").addEventListener("click", function () {
-    const dipositAmmount = document.getElementById("diposit-ammount").value;
+    const dipositField = document.getElementById("diposit-ammount");
+    const dipositAmmount = dipositField.value;
 
     // Validation
     if (dipositAmmount === "") {
@@ -30,12 +29,14 @@ document.getElementById("btn-diposit").addEventListener("click", function () {
 
     else {
         dipositCal(parseInt(dipositAmmount));
+        dipositField.value = "";
     }
 });
 
 // If withdraw button is clicked
 document.getElementById("btn-withdraw").addEventListener("click", function () {
-    const withdrawAmmount = document.getElementById("withdraw-ammount").value;
+    const withdrawField = document.getElementById("withdraw-ammount");
+    const withdrawAmmount = withdrawField.value;
 
     // Validation
     if (withdrawAmmount === "") {
@@ -49,6 +50,7 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
 
     else {
         withdrawCal(parseInt(withdrawAmmount));
+        withdrawField.value = "";
     }
 });
 
