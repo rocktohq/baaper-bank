@@ -6,9 +6,9 @@
 // Global Variables
 // Get total balance
 var totalBalance = document.getElementById("total-balance");
-// Get the diposit balance
+// Get the current diposit balance
 var dipositBalance = document.getElementById("diposit-balance");
-// Get the withdraw balance
+// Get the current withdraw balance
 var withdrawBalance = document.getElementById("withdraw-balance");
 
 
@@ -28,10 +28,11 @@ document.getElementById("btn-diposit").addEventListener("click", function () {
     // } 
 
     else {
-        dipositCal(parseInt(dipositAmmount));
+        dipositCal(parseFloat(dipositAmmount));
         dipositField.value = "";
     }
 });
+
 
 // If withdraw button is clicked
 document.getElementById("btn-withdraw").addEventListener("click", function () {
@@ -49,7 +50,7 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
     // } 
 
     else {
-        withdrawCal(parseInt(withdrawAmmount));
+        withdrawCal(parseFloat(withdrawAmmount));
         withdrawField.value = "";
     }
 });
@@ -57,25 +58,26 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
 
 // Diposit calculation
 function dipositCal(dipositAmmount) {
-    // Calculate total diposit
-    dipositBalance.innerText = parseInt(dipositBalance.innerText) + dipositAmmount;
+    // Calculate and print total diposit
+    dipositBalance.innerText = parseFloat(dipositBalance.innerText) + dipositAmmount;
 
-    // Calculate total Balance
-    totalBalance.innerText = parseInt(totalBalance.innerText) + dipositAmmount;
+    // Calculate and print total Balance
+    totalBalance.innerText = parseFloat(totalBalance.innerText) + dipositAmmount;
 }
+
 
 // Withdraw calculation
 function withdrawCal(withdrawAmmount) {
     // Validation
-    if (parseInt(totalBalance.innerText) === 0) {
+    if (parseFloat(totalBalance.innerText) === 0) {
         alert("Error: You can\'t withdraw!");
-    } else if (parseInt(totalBalance.innerText) - withdrawAmmount < 0) {
+    } else if (parseFloat(totalBalance.innerText) - withdrawAmmount < 0) {
         alert("Error: You can\'t withdraw this ammount!");
     } else {
-        // Calculate total diposit
-        withdrawBalance.innerText = parseInt(withdrawBalance.innerText) + withdrawAmmount;
+        // Calculate and print total diposit
+        withdrawBalance.innerText = parseFloat(withdrawBalance.innerText) + withdrawAmmount;
 
-        // Calculate total Balance
-        totalBalance.innerText = parseInt(totalBalance.innerText) - withdrawAmmount;
+        // Calculate and print total Balance
+        totalBalance.innerText = parseFloat(totalBalance.innerText) - withdrawAmmount;
     }
 }
