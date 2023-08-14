@@ -18,18 +18,14 @@ document.getElementById("btn-diposit").addEventListener("click", function () {
     const dipositAmmount = dipositField.value;
 
     // Validation
+    dipositField.value = "";
     if (dipositAmmount === "") {
         alert("Error: Balance is required!");
 
-    }
-
-    // else if (typeof dipositAmmount !== "number") {
-    //     alert("Error: Please provide valid ammount of balance!");
-    // } 
-
-    else {
+    } else if (isNaN(dipositAmmount)) {
+        alert("Error: Please provide valid number of ammount!");
+    } else {
         dipositCal(parseFloat(dipositAmmount));
-        dipositField.value = "";
     }
 });
 
@@ -40,24 +36,20 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
     const withdrawAmmount = withdrawField.value;
 
     // Validation
+    withdrawField.value = "";
     if (withdrawAmmount === "") {
         alert("Error: Balance is required!");
-
-    }
-
-    // else if (typeof withdrawAmmount !== "number") {
-    //     alert("Error: Please provide valid ammount of balance!");
-    // } 
-
-    else {
+    } else if (isNaN(withdrawAmmount)) {
+        alert("Error: Please provide valid number of ammount!");
+    } else {
         withdrawCal(parseFloat(withdrawAmmount));
-        withdrawField.value = "";
     }
 });
 
 
 // Diposit calculation
 function dipositCal(dipositAmmount) {
+
     // Calculate and print total diposit
     dipositBalance.innerText = parseFloat(dipositBalance.innerText) + dipositAmmount;
 
@@ -70,9 +62,9 @@ function dipositCal(dipositAmmount) {
 function withdrawCal(withdrawAmmount) {
     // Validation
     if (parseFloat(totalBalance.innerText) === 0) {
-        alert("Error: You can\'t withdraw!");
+        alert("Error: You don\'t have balance to withdraw!");
     } else if (parseFloat(totalBalance.innerText) - withdrawAmmount < 0) {
-        alert("Error: You can\'t withdraw this ammount!");
+        alert("Error: You can\'t withdraw more than total balance!");
     } else {
         // Calculate and print total diposit
         withdrawBalance.innerText = parseFloat(withdrawBalance.innerText) + withdrawAmmount;
