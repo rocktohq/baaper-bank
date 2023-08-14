@@ -25,19 +25,19 @@
             <!-- Balance -->
             <div class="mb-10 flex flex-col lg:flex-row gap-5 justify-evenly">
                 <!-- Total Diposit -->
-                <div class="bg-green-500 rounded p-5 w-full">
-                    <h2 class="text-white text-2xl font-bold">Diposit</h2>
-                    <p class="text-white text-2xl font-bold">$0</p>
+                <div class="bg-green-500 rounded p-5 w-full space-y-2">
+                    <h2 class="text-white text-2xl font-semibold">Diposit</h2>
+                    <p id="diposit-balance" class="text-white text-4xl font-bold">$0</p>
                 </div>
                 <!-- Total Withdraw -->
-                <div class="bg-blue-500 rounded p-5 w-full">
-                    <h2 class="text-white text-2xl font-bold">Withdraw</h2>
-                    <p class="text-white text-2xl font-bold">$0</p>
+                <div class="bg-blue-500 rounded p-5 w-full space-y-2">
+                    <h2 class="text-white text-2xl font-semibold">Withdraw</h2>
+                    <p id="withdraw-balance" class="text-white text-4xl font-bold">$0</p>
                 </div>
                 <!-- Total Balance -->
-                <div class="bg-orange-500 rounded p-5 w-full">
-                    <h2 class="text-white text-2xl font-bold">Balance</h2>
-                    <p class="text-white text-2xl font-bold">$0</p>
+                <div class="bg-orange-500 rounded p-5 w-full space-y-2">
+                    <h2 class="text-white text-2xl font-semibold">Balance</h2>
+                    <p id="total-balance" class="text-white text-4xl font-bold">$776</p>
                 </div>
             </div>
             <!-- Balance -->
@@ -46,23 +46,23 @@
             <div class="flex flex-col lg:flex-row gap-5 justify-evenly">
                 <!-- Diposit Balance -->
                 <div class="bg-purple-400 rounded p-5 w-full">
-                    <h2 class="text-white text-3xl font-semibold mb-4">Please Diposit</h2>
-                    <input class="px-3 py-2 block mb-2 border rounded outline-none w-full" type="text"
-                        id="diposit-ammount" placeholder="Enter Balance">
+                    <h2 class="text-white text-2xl font-semibold mb-4">Please Diposit</h2>
+                    <input class="px-4 py-3 block mb-2 border rounded outline-none w-full" type="text"
+                        id="diposit-ammount" placeholder="$ Enter Balance">
                     <div class="text-center">
                         <button id="btn-diposit"
-                            class="bg-cyan-700 hover:bg-cyan-800 text-white font-semibold px-3 py-2 rounded uppercase">Diposit
+                            class="bg-cyan-700 hover:bg-cyan-800 text-white font-semibold px-4 py-3 rounded uppercase">Diposit
                             Balance</button>
                     </div>
                 </div>
                 <!-- Withdraw Balance -->
                 <div class="bg-purple-500 rounded p-5 w-full">
-                    <h2 class="text-white text-3xl font-semibold mb-4">Please Withdraw</h2>
-                    <input class="px-3 py-2 block mb-2 border rounded outline-none w-full" type="text"
-                        id="withdraw-ammount" placeholder="Enter Balance">
+                    <h2 class="text-white text-2xl font-semibold mb-4">Please Withdraw</h2>
+                    <input class="px-4 py-3 block mb-2 border rounded outline-none w-full" type="text"
+                        id="withdraw-ammount" placeholder="$ Enter Balance">
                     <div class="text-center">
                         <button id="btn-withdraw"
-                            class="bg-cyan-700 hover:bg-cyan-800 text-white font-semibold px-3 py-2 rounded uppercase">Withdraw
+                            class="bg-cyan-700 hover:bg-cyan-800 text-white font-semibold px-4 py-3 rounded uppercase">Withdraw
                             Balance</button>
                     </div>
                 </div>
